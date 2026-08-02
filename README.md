@@ -12,3 +12,4 @@ A local-first Android app for ranking bubble tea shops through pairwise comparis
 The Android application ID is `com.mycompany.bobascore`. Firebase is intentionally
 not wired into this starter yet, and photos will remain local on-device when that
 feature is added.
+# bobascore
