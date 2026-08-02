@@ -1,0 +1,46 @@
+# Operating system and editor files
+.DS_Store
+*.swp
+*.swo
+.idea/
+*.iml
+.vscode/
+
+# Dart, Flutter, and build artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+*.class
+*.log
+
+# Android build and signing output
+/android/.gradle/
+/android/local.properties
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/key.properties
+*.jks
+*.keystore
+
+# Firebase and other local-only configuration
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+firebase_options.dart
+.env
+.env.*
+!.env.example
+
+# Generated symbols and obfuscation maps
+app.*.symbols
+app.*.map.json
+
+# Dart code generation outputs (enable tracking if generated files become source)
+*.g.dart
+*.freezed.dart
