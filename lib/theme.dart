@@ -8,18 +8,19 @@ const _peach = Color(0xFFFFB38A);
 
 final ThemeData bobaTheme = ThemeData(
   useMaterial3: true,
-  colorScheme: ColorScheme.fromSeed(
-    seedColor: _milkTea,
-    brightness: Brightness.light,
-  ).copyWith(
-    primary: _milkTea,
-    onPrimary: Colors.white,
-    secondary: _taro,
-    onSecondary: Colors.white,
-    tertiary: _peach,
-    surface: _cream,
-    onSurface: _bobaBlack,
-  ),
+  colorScheme:
+      ColorScheme.fromSeed(
+        seedColor: _milkTea,
+        brightness: Brightness.light,
+      ).copyWith(
+        primary: _milkTea,
+        onPrimary: Colors.white,
+        secondary: _taro,
+        onSecondary: Colors.white,
+        tertiary: _peach,
+        surface: _cream,
+        onSurface: _bobaBlack,
+      ),
   scaffoldBackgroundColor: _cream,
   appBarTheme: const AppBarTheme(
     centerTitle: true,
@@ -30,9 +31,7 @@ final ThemeData bobaTheme = ThemeData(
   cardTheme: CardThemeData(
     color: Colors.white,
     elevation: 0,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(24),
-    ),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
   ),
   inputDecorationTheme: InputDecorationTheme(
     filled: true,

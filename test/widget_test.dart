@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:boba_score/main.dart';
 
-
 void main() {
   testWidgets('BobaScore home screen renders', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: BobaScoreApp()));
