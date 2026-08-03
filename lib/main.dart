@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'providers/hive_service_provider.dart';
-import 'screens/boba_score_screen.dart';
+import 'screens/home_screen.dart';
 import 'services/hive_service.dart';
 import 'theme.dart';
 
@@ -26,7 +26,7 @@ class BobaScoreApp extends StatelessWidget {
     return MaterialApp(
       title: 'BobaScore',
       theme: bobaTheme,
-      home: const BobaScoreScreen(),
+      home: const HomeScreen(),
     );
   }
 }

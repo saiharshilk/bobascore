@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
@@ -9,20 +9,20 @@ import 'package:boba_score/models/visit.dart';
 import 'package:boba_score/services/hive_service.dart';
 
 void main() {
-  late Directory hiveDirectory;
   late Box<Shop> shopsBox;
   late Box<Visit> visitsBox;
   late Box<Ranking> rankingsBox;
   late HiveService service;
 
-  setUp(() async {
-    hiveDirectory = await Directory.systemTemp.createTemp('boba_score_test_');
-    Hive.init(hiveDirectory.path);
+  setUpAll(() async {
     HiveService.registerAdapters();
 
-    shopsBox = await Hive.openBox<Shop>('shops_test');
-    visitsBox = await Hive.openBox<Visit>('visits_test');
-    rankingsBox = await Hive.openBox<Ranking>('rankings_test');
+    shopsBox = await Hive.openBox<Shop>('shops_test', bytes: Uint8List(0));
+    visitsBox = await Hive.openBox<Visit>('visits_test', bytes: Uint8List(0));
+    rankingsBox = await Hive.openBox<Ranking>(
+      'rankings_test',
+      bytes: Uint8List(0),
+    );
     service = HiveService(
       shopsBox: shopsBox,
       visitsBox: visitsBox,
@@ -30,11 +30,16 @@ void main() {
     );
   });
 
-  tearDown(() async {
+  setUp(() async {
+    await shopsBox.clear();
+    await visitsBox.clear();
+    await rankingsBox.clear();
+  });
+
+  tearDownAll(() async {
     await shopsBox.close();
     await visitsBox.close();
     await rankingsBox.close();
-    await hiveDirectory.delete(recursive: true);
   });
 
   test('persists all model fields through Hive adapters', () async {
